@@ -13,6 +13,7 @@ int ldisp=0;
 void DrawManAndUmbrella(int x,int ldisp)
 {
 //head
+setcolor(YELLOW);
 circle(x,GroundY-90,10);
 line(x,GroundY-80,x,GroundY-30);
 //hand
@@ -24,6 +25,8 @@ line(x+10,GroundY-55,x+20,GroundY-70);
 line(x,GroundY-30,x+ldisp,GroundY);
 line(x,GroundY-30,x-ldisp,GroundY);
 //umbrella
+setcolor(13);
+setfillstyle(SOLID_FILL,13);
 pieslice(x+20,GroundY-120,0,180,40);
 line(x+20,GroundY-120,x+20,GroundY-70);
 }
@@ -39,6 +42,7 @@ for(i=0;i<400;i++)
  {
   if(ry<GroundY-120 || (ry>GroundY-120 && (rx<x-20 || rx>x+60)))
   line(rx,ry,rx+0.5,ry+4);
+  setcolor(11);
  }
 }
 }
@@ -50,6 +54,7 @@ void main()
   while(!kbhit())
   {
    //Draw Ground
+   setcolor(10);
    line(0,GroundY,ScreenWidth,GroundY);
    Rain(x);
    ldisp=(ldisp+2)%20;
